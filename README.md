@@ -69,7 +69,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
     -   [x] Commit: `Implement publish function in Program service and Program controller.`
     -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -108,3 +108,15 @@ There's some features that I'll possibly use in my project,
 - Environment Variables: Features to define environment variables, to switch to a different environment (development, staging, etc)
   
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?    
+**Answer:**   
+In our case, we use push model where our publisher (notifications) will notify each subscriber when product got published
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)   
+**Answer:**    
+If we use pull method, the advantage is subscribers can take data when they need it therefore unnecessary notification for subscribers won't be sent making subscribers taken full control of it own notifications. But the disadvantage is subscribers need to actively make a request about new published product making the notifications update not up to date.
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.    
+**Answer:**    
+When we try to publish a lot of product at the same time it will process the notification one by one, this will hinder our responses notifications to subscribers. Making our app unresponsive and slow.
+
