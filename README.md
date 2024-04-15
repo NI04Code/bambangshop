@@ -63,7 +63,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement subscribe function in Notification controller.`
     -   [x] Commit: `Implement unsubscribe function in Notification service.`
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -91,5 +91,20 @@ We can't implement singleton pattern directly because static variables in rust c
 
 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?   
+**Answer:**  
+Because it coherent with one of SOLID Principle, the SRP:Single Responsibility Principle, by seperating model, service, and repository we seperate functionality to handle the representation of attribute of data in Model, database interaction in repository, and business logic in service. By doing this we imporve our application scalability/
 
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?   
+**Answer:**     
+If we do all responsibility in Model without seperating it concern using service and repository, our codebase will looks complex and hard to maintain, for example when product want to notify subscriber, it need to access subscriber models, which will violate encapsulation constraint, therefore make our code harder to trace.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.   
+**Answer:**   
+Postman help me to simulate request to endpoint API and getting it response when we haven't create the html template yet.
+
+There's some features that I'll possibly use in my project,
+- Sending Request: To send request to API endpoint and receiving it response
+- Environment Variables: Features to define environment variables, to switch to a different environment (development, staging, etc)
+  
 #### Reflection Publisher-3
